@@ -3,6 +3,9 @@ import Banner from '../components/banner';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getArtists } from '../actions'
+import Reveal from 'react-reveal'; // REACT REVEAL
+import 'animate.css/animate.css'; //  REACT REVEAL
+
 
 import { bindActionCreators } from 'redux';
 
@@ -32,12 +35,14 @@ class Home extends Component {
 
                     return original_title.replace(/[,+:+;\-]/g,'').replace(/\s/g,'-').toLowerCase();
                 }
-                return <Link key={item.id} to={`/artist/${item.id}`}
+                return <Reveal key={item.id} effect="animated fadeInUp">
+                <Link key={item.id} to={`/artist/${item.id}`}
                     className="artist_item"
                     style={style}
                 >
                     <div>{item.original_title}</div>
                 </Link>
+                </Reveal>
              })
         })
     }

@@ -22,7 +22,7 @@ const App =() => {
           
             <Route exact path="/" component={Home}/>
             <Route path="/artist/:id" component={Artist}/>
-        
+          
            
            
         </div>

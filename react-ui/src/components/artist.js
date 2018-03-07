@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './header';
 import AlbumsList from './albumsList';
+import Reveal from 'react-reveal'; // REACT REVEAL
+import 'animate.css/animate.css'; //  REACT REVEAL
 const REQ_URL = `http://localhost:3000/artist`;
 // Production
 //const REQ_URL = `/artist`; 
@@ -33,6 +35,7 @@ class Artist extends Component {
         return (
             <div>
                 <Header />
+                <Reveal key="1" effect="animated fadeInUp">
                 <div className="artist_bio">
                     <div className="avatar">
                  
@@ -45,7 +48,7 @@ class Artist extends Component {
                         </div>
                     </div>
                 </div>
-               
+                </Reveal >
             </div>
         )
     }
